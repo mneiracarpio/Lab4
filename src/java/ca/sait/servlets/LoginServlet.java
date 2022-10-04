@@ -31,6 +31,7 @@ public class LoginServlet extends HttpServlet {
         String username = (String) request.getSession().getAttribute("username");
         if (username != null ) {
             response.sendRedirect("home");
+            // Redirect to the home page
             return;
         }
         this.getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
